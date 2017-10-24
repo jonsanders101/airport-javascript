@@ -13,8 +13,12 @@ function Airport(capacity){
 
 Airport.prototype.land = function(plane){
 
-  if (this._planes.length === this._capacity) {
+  if (this._isFull()) {
     throw new Error("Airport full");
   }
   this._planes.push(plane);
+}
+
+Airport.prototype._isFull = function(){
+  return (this._planes.length === this._capacity)
 }
