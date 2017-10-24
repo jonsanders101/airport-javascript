@@ -4,5 +4,9 @@ describe("Airport", function () {
       var airport = new Airport();
       expect(airport._planes).toEqual([]);
     });
+    it("should create an airport with a maximum capacity", function(){
+      var airport = new Airport(10);
+      expect(airport._capacity).toEqual(10);
+    });
   });
 });
