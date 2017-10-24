@@ -12,6 +12,12 @@ describe("Airport", function () {
       var airport = new Airport();
       expect(airport._capacity).toEqual(defaultCapacity);
     });
+    it("raises an error if capacity is less than 1", function(){
+      expect(function(){ Airport(0) }).toThrowError("Capacity must be greater than 1");
+    });
+    it("test error", function (){
+      expect(testError).toThrowError("Test error");
+    })
   });
   describe("land", function(){
     it("stores a plane in the airport", function(){
