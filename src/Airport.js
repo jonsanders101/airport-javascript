@@ -29,3 +29,7 @@ function Plane(flying){
   }
   this.flying = flying
 }
+
+Plane.prototype.ground = function(){
+  this.flying = false;
+}

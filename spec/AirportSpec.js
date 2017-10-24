@@ -34,9 +34,20 @@ describe("Airport", function () {
 });
 describe("Plane", function(){
   describe("Airport constructor", function(){
-    it("creates a plane that is flying", function(){
+    it("creates a plane that is flying by default", function(){
       var plane = new Plane();
       expect(plane.flying).toEqual(true);
+    })
+    it("creates a plane that is not flying if passed false", function(){
+      var plane = new Plane(false);
+      expect(plane.flying).toEqual(false);
+    })
+  })
+  describe("ground", function(){
+    it("sets 'flying' to false", function(){
+      var plane = new Plane();
+      plane.ground()
+      expect(plane.flying).toEqual(false);
     })
   })
 })
