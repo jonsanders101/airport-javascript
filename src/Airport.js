@@ -6,4 +6,8 @@ function Airport(capacity){
     }
   this._planes = [];
   this._capacity = capacity;
-};
+}
+
+Airport.prototype.land = function(plane){
+  this._planes.push(plane);
+}
