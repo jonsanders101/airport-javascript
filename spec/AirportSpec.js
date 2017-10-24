@@ -8,9 +8,9 @@ describe("Airport", function () {
       var airport = new Airport(10);
       expect(airport._capacity).toEqual(10);
     });
-    it("has a default maximum capacity of 20", function(){
+    it("has a default maximum capacity", function(){
       var airport = new Airport();
-      expect(airport._capacity).toEqual(20);
+      expect(airport._capacity).toEqual(defaultCapacity);
     });
   });
 });
