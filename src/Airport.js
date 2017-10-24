@@ -23,6 +23,10 @@ Airport.prototype._isFull = function(){
   return (this._planes.length === this._capacity)
 }
 
+Airport.prototype.takeOff = function(plane){
+  this._planes.splice( this._planes.indexOf(plane), 1 ) ;
+}
+
 function Plane(flying){
   if (flying === undefined) {
     flying = true;

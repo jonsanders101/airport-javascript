@@ -31,6 +31,14 @@ describe("Airport", function () {
       expect(function(){ airport.land(plane) }).toThrowError("Airport full")
     });
   });
+  describe("fly", function(){
+    it("releases a plane from its stored planes", function(){
+      var airport = new Airport(1);
+      var plane = jasmine.createSpyObj('plane', ['method']);
+      airport.takeOff(plane)
+      expect(airport).not.toContain(plane)
+    })
+  })
 });
 describe("Plane", function(){
   describe("Airport constructor", function(){
