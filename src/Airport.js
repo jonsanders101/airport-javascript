@@ -22,3 +22,10 @@ Airport.prototype.land = function(plane){
 Airport.prototype._isFull = function(){
   return (this._planes.length === this._capacity)
 }
+
+function Plane(flying){
+  if (flying === undefined) {
+    flying = true;
+  }
+  this.flying = flying
+}

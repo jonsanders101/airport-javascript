@@ -10,6 +10,7 @@ describe("Airport", function () {
     });
     it("sets a default maximum capacity", function(){
       var airport = new Airport();
+      console.log(airport['_capacity']);
       expect(airport._capacity).toEqual(defaultCapacity);
     });
     it("raises an error if capacity is less than 1", function(){
@@ -31,3 +32,11 @@ describe("Airport", function () {
     });
   });
 });
+describe("Plane", function(){
+  describe("Airport constructor", function(){
+    it("creates a plane that is flying", function(){
+      var plane = new Plane();
+      expect(plane.flying).toEqual(true);
+    })
+  })
+})
