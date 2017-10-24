@@ -15,9 +15,6 @@ describe("Airport", function () {
     it("raises an error if capacity is less than 1", function(){
       expect(function(){ Airport(0) }).toThrowError("Capacity must be greater than 1");
     });
-    it("test error", function (){
-      expect(testError).toThrowError("Test error");
-    })
   });
   describe("land", function(){
     it("stores a plane in the airport", function(){
@@ -25,6 +22,12 @@ describe("Airport", function () {
       var plane = jasmine.createSpyObj('plane', ['method']);
       airport.land(plane);
       expect(airport._planes).toContain(plane);
+    });
+    it("raises an error if airport is full of planes", function(){
+      var airport = new Airport(1);
+      var plane = jasmine.createSpyObj('plane', ['method']);
+      airport.land(plane);
+      expect(function(){ airport.land(plane) }).toThrowError("Airport full")
     });
   });
 });
