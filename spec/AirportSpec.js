@@ -35,8 +35,16 @@ describe("Airport", function () {
     it("releases a plane from its stored planes", function(){
       var airport = new Airport(1);
       var plane = jasmine.createSpyObj('plane', ['method']);
+      airport.land(plane);
       airport.takeOff(plane)
       expect(airport).not.toContain(plane)
+    })
+    it("raises an error if plane is not in the airport", function(){
+      var airport = new Airport();
+      var plane = jasmine.createSpyObj('plane', ['method']);
+      var planeTwo = jasmine.createSpyObj('plane', ['method']);
+      airport.land(plane);
+      expect(function(){ airport.takeOff(planeTwo) }).toThrowError("Plane not in this airport")
     })
   })
 });

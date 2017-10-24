@@ -24,6 +24,9 @@ Airport.prototype._isFull = function(){
 }
 
 Airport.prototype.takeOff = function(plane){
+  if (this._planes.indexOf(plane) === -1) {
+    throw new Error("Plane not in this airport")
+  }
   this._planes.splice( this._planes.indexOf(plane), 1 ) ;
 }
 
